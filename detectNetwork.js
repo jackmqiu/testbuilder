@@ -15,53 +15,20 @@ var detectNetwork = function(cardNumber) {
     return 'Diner\'s Club';
   }else if(cardNumber[0] === '3' && (cardNumber[1] === '4' || cardNumber[1] === '7') && cardNumber.length === 15){
     return 'American Express';
+  }else if(cardNumber[0] === '4' &&(cardNumber.length === 13||cardNumber.length === 16||cardNumber.length === 19)){
+    return 'Visa';
+  }else if(cardNumber[0] === '5' &&(cardNumber[1] === '1' || cardNumber[1] === '2' || cardNumber[1] === '3' || cardNumber[1] === '4'|| cardNumber[1] === '5') && cardNumber.length===16){
+    return 'MasterCard';
+  }else if(cardNumber[0] ==='6' && cardNumber[1] === '0' && cardNumber[2] === '1' && cardNumber[3] === '1' && (cardNumber.length === 16 || cardNumber.length === 19)){
+    return 'Discover';
+  }else if((parseInt(cardNumber.slice(0,3)) <= 649 && parseInt(cardNumber.slice(0,3)) >= 644) && (cardNumber.length === 16 || cardNumber.length === 19)){
+    return 'Discover';
+  }else if(cardNumber[0] === '6' && cardNumber[1] === '5' && (cardNumber.length === 16 || cardNumber.length === 19)){
+    return 'Discover';
+  }else if((cardNumber.slice(0, 4) === '5018' || cardNumber.slice(0, 4) === '5038' || cardNumber.slice(0, 4) === '5020' || cardNumber.slice(0, 4) === '6034') && (cardNumber.length >= 12 || cardNumber.length <= 19)  ){
+    return 'Maestro';
   }else{
-    return 'Sorry, we only recognize 2 cards, and the one you entered is not one of them';
+    return 'Sorry, we only recognize 4 cards, and the one you entered is not one of them';
   }
   // Once you've read this, go ahead and try to implement this function, then return to the console.
 };
-
-
-var MasterCard34Test = function(MasterCardLength){
-  for (var i = 1; i < 10; i++ ){
-    //3rd digit
-
-    for (var i = 1; i<10; i++){
-      //4th digits
-      for (var i = 1; i<10; i++){
-        //5th digits
-        for (var i = 1; i<10; i++){
-          //6th digits
-          for (var i = 1; i<10; i++){
-            //7th digits
-            for (var i = 1; i<10; i++){
-              //8th digits
-              for (var i = 1; i<10; i++){
-                //9th digits
-                for (var i = 1; i<10; i++){
-                  //10th digits
-                  for (var i = 1; i<10; i++){
-                    //11th digits
-                    for (var i = 1; i<10; i++){
-                      //12th digits
-                      for (var i = 1; i<10; i++){
-                        //13th digits
-                        for (var i = 1; i<10; i++){
-                          //14th digits
-                          for (var i = 1; i<10; i++){
-                            //15th digits
-
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
