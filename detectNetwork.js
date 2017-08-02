@@ -15,6 +15,8 @@ var detectNetwork = function(cardNumber) {
     return 'Diner\'s Club';
   }else if(cardNumber[0] === '3' && (cardNumber[1] === '4' || cardNumber[1] === '7') && cardNumber.length === 15){
     return 'American Express';
+  }else if((parseInt(cardNumber.slice(0,4)) === 4903 || parseInt(cardNumber.slice(0,4)) === 4905 || parseInt(cardNumber.slice(0,4)) === 4911 || parseInt(cardNumber.slice(0,4)) === 4936) && (cardNumber.length === 16 || cardNumber.length === 18 || cardNumber.length === 19)){
+    return 'Switch';
   }else if(cardNumber[0] === '4' &&(cardNumber.length === 13||cardNumber.length === 16||cardNumber.length === 19)){
     return 'Visa';
   }else if(cardNumber[0] === '5' &&(cardNumber[1] === '1' || cardNumber[1] === '2' || cardNumber[1] === '3' || cardNumber[1] === '4'|| cardNumber[1] === '5') && cardNumber.length===16){
@@ -25,8 +27,16 @@ var detectNetwork = function(cardNumber) {
     return 'Discover';
   }else if(cardNumber[0] === '6' && cardNumber[1] === '5' && (cardNumber.length === 16 || cardNumber.length === 19)){
     return 'Discover';
-  }else if((cardNumber.slice(0, 4) === '5018' || cardNumber.slice(0, 4) === '5038' || cardNumber.slice(0, 4) === '5020' || cardNumber.slice(0, 4) === '6034') && (cardNumber.length >= 12 || cardNumber.length <= 19)  ){
+  }else if((cardNumber.slice(0, 4) === '5018' || cardNumber.slice(0, 4) === '5038' || cardNumber.slice(0, 4) === '5020' || cardNumber.slice(0, 4) === '6304') && (cardNumber.length >= 12 || cardNumber.length <= 19)  ){
     return 'Maestro';
+  }else if((parseInt(cardNumber.slice(0,6)) >= 622126 && parseInt(cardNumber.slice(0,6)) <= 622925) && (cardNumber.length >= 16 && cardNumber.length <= 19)){
+    return 'China UnionPay';
+  }else if((parseInt(cardNumber.slice(0,3)) >= 624 && parseInt(cardNumber.slice(0,3)) <= 626) && (cardNumber.length >= 16 && cardNumber.length <= 19)){
+    return 'China UnionPay';
+  }else if((parseInt(cardNumber.slice(0,4)) >= 6282 && parseInt(cardNumber.slice(0,4)) <= 6288) && (cardNumber.length >= 16 && cardNumber.length <= 19)){
+    return 'China UnionPay';
+  }else if((parseInt(cardNumber.slice(0,4)) === 4903 || parseInt(cardNumber.slice(0,4)) === 4905 || parseInt(cardNumber.slice(0,4)) === 4911 || parseInt(cardNumber.slice(0,4)) === 4936 || parseInt(cardNumber.slice(0,6)) === 564182 || parseInt(cardNumber.slice(0,6)) === 633110 || parseInt(cardNumber.slice(0,4)) === 6333 || parseInt(cardNumber.slice(0,4)) === 6759 || parseInt(cardNumber.slice(0,4)) === 6282) && (cardNumber.length === 16 || cardNumber.length === 18 || cardNumber.length === 19)){
+    return 'Switch';
   }else{
     return 'Sorry, we only recognize 4 cards, and the one you entered is not one of them';
   }
