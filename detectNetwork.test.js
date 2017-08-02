@@ -185,49 +185,59 @@ describe('Maestro', function() {
   var suffix = '12345678';
   for (var length = 12; length <= (19); length++){
     (function(suffix) {
+      console.log(suffix)
       it('always has a prefix of 5018 and a length of '+length, function(){
         expect(detectNetwork('5018'+suffix)).to.equal('Maestro');
       });
-      console.log('5018'+suffix);
-    })(suffix)
-    suffix = suffix.concat('0');
-  };
-  suffix = '12345678';
-  for (var length = 12; length <= (19); length++){
-
-    (function(suffix){
       it('always has a prefix of 5020 and a length of '+length, function(){
         expect(detectNetwork('5020'+suffix)).to.equal('Maestro');
       });
-      console.log('5020'+suffix);
-    })(suffix)
-    suffix = suffix.concat('0');
-
-  };
-  suffix = '12345678';
-  for (var length = 12; length <= (19); length++){
-
-    (function(suffix){
       it('always has a prefix of 5038 and a length of '+length, function(){
         expect(detectNetwork('5038'+suffix)).to.equal('Maestro');
       });
-
-      console.log('5038'+suffix);
-
-    })(suffix)
-    suffix = suffix.concat('0');
-  };
-  suffix = '12345678';
-  for (var length = 12; length <= (19); length++){
-
-    (function(suffix){
       it('always has a prefix of 6034 and a length of '+length, function(){
         expect(detectNetwork('6034'+suffix)).to.equal('Maestro');
       });
-      console.log('6034'+suffix);
     })(suffix)
     suffix = suffix.concat('0');
+
   };
+
+
+
+  //   (function(suffix){
+  //     it('always has a prefix of 5020 and a length of '+length, function(){
+  //       expect(detectNetwork('5020'+suffix)).to.equal('Maestro');
+  //     });
+  //     console.log('5020'+suffix);
+  //   })(suffix)
+  //   suffix = suffix.concat('0');
+  //
+  // };
+  // suffix = '12345678';
+  // for (var length = 12; length <= (19); length++){
+  //
+  //   (function(suffix){
+  //     it('always has a prefix of 5038 and a length of '+length, function(){
+  //       expect(detectNetwork('5038'+suffix)).to.equal('Maestro');
+  //     });
+  //
+  //     console.log('5038'+suffix);
+  //
+  //   })(suffix)
+  //   suffix = suffix.concat('0');
+  // };
+  // suffix = '12345678';
+  // for (var length = 12; length <= (19); length++){
+  //
+  //   (function(suffix){
+  //     it('always has a prefix of 6034 and a length of '+length, function(){
+  //       expect(detectNetwork('6034'+suffix)).to.equal('Maestro');
+  //     });
+  //     console.log('6034'+suffix);
+  //   })(suffix)
+  //   suffix = suffix.concat('0');
+  // };
 
 });
 
